@@ -1,0 +1,22 @@
+{
+  "name": "react-reach",
+  "version": "0.0.1",
+  "description": "A small library to for react to communicate with graphQL",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kennetpostigo/react-reach.git"
+  },
+  "keywords": [
+    "react-reach"
+  ],
+  "author": "Kennet Postigo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kennetpostigo/react-reach/issues"
+  },
+  "homepage": "https://github.com/kennetpostigo/react-reach#readme"
+}

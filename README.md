@@ -1,2 +1,2 @@
 # react-reach
-> A small library for data-fetching from GraphQL
+> A small library to for react to communicate with graphQL
