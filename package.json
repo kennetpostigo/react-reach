@@ -4,8 +4,8 @@
   "description": "A small library for react to communicate with GraphQL",
   "main": "src/index.js",
   "scripts": {
-    "test": "",
-    "commit": "git-cz"
+    "test": "mocha test/temp.spec.js -w",
+    "commit": "git-cz",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
