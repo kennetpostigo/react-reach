@@ -1,22 +1,36 @@
 {
   "name": "react-reach",
-  "version": "0.0.1",
-  "description": "A small library to for react to communicate with graphQL",
-  "main": "index.js",
+  "version": "0.0.0-semantically-released",
+  "description": "A small library for react to communicate with GraphQL",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "",
+    "commit": "git-cz"
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kennetpostigo/react-reach.git"
+    "url": "https://github.com/kennetpostigo/react-reach.git"
   },
   "keywords": [
-    "react-reach"
+    "reach",
+    "functional",
+    "react"
   ],
-  "author": "Kennet Postigo",
-  "license": "ISC",
+  "author": "Kennet Postigo <kennetfpostigo@gmail.com> (http://kpostigo.com/)",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/kennetpostigo/react-reach/issues"
   },
-  "homepage": "https://github.com/kennetpostigo/react-reach#readme"
+  "homepage": "https://github.com/kennetpostigo/react-reach#readme",
+  "devDependencies": {
+    "chai": "3.4.1",
+    "commitizen": "2.4.4",
+    "cz-conventional-changelog": "1.1.4",
+    "mocha": "2.3.3",
+    "semantic-release": "^4.3.5"
+},
+  "czConfig": {
+      "path": "node_modules/cz-conventional-changelog"
+  }
 }
