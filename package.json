@@ -4,9 +4,11 @@
   "description": "A small library for react to communicate with GraphQL",
   "main": "src/index.js",
   "scripts": {
-    "test": "mocha test/temp.spec.js -w",
-    "test:single": "mocha test/temp.spec.js",
     "commit": "git-cz",
+    "check-coverage": "istanbul check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
+    "report-coverage": "cat ./coverage/lcov.info | codecov",
+    "test": "mocha test/temp.spec.js -w",
+    "test:single": "istanbul cover -x *.spec.js _mocha -- -R spec test/temp.spec.js",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
@@ -26,18 +28,20 @@
   "homepage": "https://github.com/kennetpostigo/react-reach#readme",
   "devDependencies": {
     "chai": "3.4.1",
+    "codecov.io": "0.1.6",
     "commitizen": "2.4.4",
     "cz-conventional-changelog": "1.1.4",
     "ghooks": "1.0.0",
+    "istanbul": "0.4.0",
     "mocha": "2.3.3",
     "semantic-release": "^4.3.5"
   },
   "czConfig": {
     "path": "node_modules/cz-conventional-changelog"
-},
+  },
   "config": {
-      "ghooks": {
-          "pre-commit": "npm run test:single"
-      }
+    "ghooks": {
+      "pre-commit": "npm run test:single && npm run check-coverage"
+    }
   }
 }
