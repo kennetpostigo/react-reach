@@ -1,7 +1,3 @@
-function getName () {
+export function getName () {
     return "kool";
-}
-
-module.exports ={
-    name: getName
 }

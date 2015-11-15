@@ -2,13 +2,15 @@
   "name": "react-reach",
   "version": "0.0.0-semantically-released",
   "description": "A small library for react to communicate with GraphQL",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
+    "prebuild": "rm -rf dist && mkdir dist",
+    "build": "babel src/index.js -o dist/index.js",
     "commit": "git-cz",
     "check-coverage": "istanbul check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
     "report-coverage": "cat ./coverage/lcov.info | codecov",
-    "test": "mocha test/temp.spec.js -w",
-    "test:single": "istanbul cover -x *.spec.js _mocha -- -R spec test/temp.spec.js",
+    "test": "mocha test/temp.spec.js -w --compilers js:babel-core/register",
+    "test:single": "istanbul cover -x *.spec.js _mocha -- -R spec test/temp.spec.js --compilers js:babel-core/register",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
@@ -27,6 +29,10 @@
   },
   "homepage": "https://github.com/kennetpostigo/react-reach#readme",
   "devDependencies": {
+    "babel": "6.1.18",
+    "babel-cli": "6.1.18",
+    "babel-core": "6.1.21",
+    "babel-preset-es2015": "6.1.18",
     "chai": "3.4.1",
     "codecov.io": "0.1.6",
     "commitizen": "2.4.4",
@@ -43,5 +49,10 @@
     "ghooks": {
       "pre-commit": "npm run test:single && npm run check-coverage"
     }
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
   }
 }

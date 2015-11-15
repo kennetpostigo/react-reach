@@ -1,8 +1,8 @@
-var expect = require('chai').expect;
-var index = require('./../src/index.js');
+import {expect} from 'chai';
+import {getName} from './../src/index.js';
 
 describe('dummy test', function () {
     it('should pass', function () {
-        expect(index.name()).to.equal('kool');
+        expect(getName()).to.equal('kool');
     });
 });
