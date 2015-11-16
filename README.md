@@ -19,7 +19,7 @@ request to specified endpoints with REST, or networks request to `"/graphql"`
 if you use GraphQL. Now Relay may come to mind, and what makes reach different
 is that it only does one thing. You can use reach along Redux.
 ## Usage
-The goal is to make fetching data from a GraphQL server as easy as this:
+react-reach makes fetching data from a GraphQL server as easy as this:
 ```js
 //.reachGraphQL() to make a query for some data
 //params: reachGraphQL(url, query/mutation, queryParameters)
