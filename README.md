@@ -10,24 +10,40 @@
 It helps you write applications that use tools you are familiar with from the
 react ecosystem. react-reach is designed to be used along side redux and react.
 React-reach works as the layer that handles communication of data between React
-and graphQL.
+and graphQL. Reach enables developers to make queries and mutations against GraphQL.
 
 ## The need for react-reach
 When developing applications with react everything goes smoothly until you begin
 to account for request to the server. Usually you would go about making network
 request to specified endpoints with REST, or networks request to `"/graphql"`
 if you use GraphQL. Now Relay may come to mind, and what makes reach different
-is that it only does one thing. So you can use it along Redux. 
+is that it only does one thing. You can use reach along Redux.
 ## The Goal
 The goal is to make fetching data from a GraphQL server as easy as this:
 ```javascript
-reachGraphQL('localhost:3000/graphql', `
-{
+//.reachGraphQL() to make a query for some data
+//params: reachGraphQL(url, query/mutation, queryParameters)
+
+.reachGraphQL('localhost:1000', `{
     user(id: "1") {
         name
     }
-}`);
+}`, {})
+
+
+//.reachWithDispatch() to make a query and dispatch actionCreator passed in
+//To be used with redux-thunk or any similar middleware.
+//params: reachWithDispatch(url, query/mutation, queryParameters, actionCreator)
+
+.reachWithDispatch('localhost:1000', `{
+    user(id: "1") {
+        name
+    }
+}`, {}, somePredefinedActionCreator)
+
+
 ```
 
 ## Status on react-reach
-I have just began working on react-reach and it is still under development. Stay tuned.
+Its now in Beta. Basic Functionality, if you find bugs or if anything isn't working
+properly please report it.
