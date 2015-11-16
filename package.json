@@ -1,6 +1,6 @@
 {
   "name": "react-reach",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A small library for react to communicate with GraphQL",
   "main": "src/index.js",
   "scripts": {
@@ -28,7 +28,7 @@
   "homepage": "https://github.com/kennetpostigo/react-reach#readme",
   "dependencies": {
     "isomorphic-fetch": "2.2.0"
-},
+  },
   "devDependencies": {
     "express": "4.13.3",
     "express-graphql": "0.4.4",
