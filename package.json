@@ -27,6 +27,8 @@
   },
   "homepage": "https://github.com/kennetpostigo/react-reach#readme",
   "devDependencies": {
+    "babel": "6.1.18",
+    "babel-cli": "6.1.18",
     "babel-core": "6.1.21",
     "babel-istanbul": "0.5.8",
     "babel-preset-es2015": "6.1.18",
@@ -51,5 +53,8 @@
     "presets": [
       "es2015"
     ]
+  },
+  "dependencies": {
+    "isomorphic-fetch": "2.2.0"
   }
 }
