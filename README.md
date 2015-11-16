@@ -24,13 +24,14 @@ approach and striped down version of Relay. Never will you have to use classes
 ## The Goal
 The goal is to make fetching data from a GraphQL server as easy as this:
 ```javascript
-Todo = reach.createContainer(TodoApp, {
-     query {
-          items
-     }
-});
+reachGraphQL('localhost:3000/graphql', `
+{
+    user(id: "1") {
+        name
+    }
+}`);
 ```
 
 ## Status on react-reach
 I have just began working on react-reach and it is still under development. Stay tuned.
-Project Started 11/14/2015
+Project Started __11/14/2015__
