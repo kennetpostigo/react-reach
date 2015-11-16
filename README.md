@@ -18,9 +18,9 @@ to account for request to the server. Usually you would go about making network
 request to specified endpoints with REST, or networks request to `"/graphql"`
 if you use GraphQL. Now Relay may come to mind, and what makes reach different
 is that it only does one thing. You can use reach along Redux.
-## The Goal
+## Usage
 The goal is to make fetching data from a GraphQL server as easy as this:
-```javascript
+```js
 //.reachGraphQL() to make a query for some data
 //params: reachGraphQL(url, query/mutation, queryParameters)
 
