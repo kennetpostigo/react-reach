@@ -1,7 +1,4 @@
 {
-    "rules": {
-        "no-unused-vars": 0
-    },
     "env": {
         "browser": true,
         "mocha": true,
@@ -10,10 +7,6 @@
     },
     "extends": "eslint:recommended",
     "ecmaFeatures": {
-        "modules": true,
-        "jsx": true
-    },
-    "plugins": [
-        "react"
-    ]
+        "modules": true
+    }
 }

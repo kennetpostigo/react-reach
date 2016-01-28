@@ -9,13 +9,12 @@ require("babel-polyfill");
  * @return {[Object]}             [Data that was queried or qutated]
  */
 export function reachGraphQL (path, query, queryParams = {}) {
-    return async () => {
-        try{
-            let response = await transport(path, query, queryParams);
-            return response.data;
-        } catch (error) {
-            console.log(error)
-        }
+  return async () => {
+    try{
+      let response = await transport(path, query, queryParams);
+      return response.data;
+    } catch (error) {
+      console.log(error)
     }
-
+  }
 }

@@ -9,14 +9,14 @@ require("babel-polyfill");
  * @param  {[type]} actionCreator =  (  [The actionCreator to dispatch]
  * @return {[function]}               [dispatch to store]
  */
-export function reachWithDispatch (path, query, queryParams = {}, actionCreator = () => {}) {
-    return async dispatch => {
-        try{
-            let response = await transport(path, query, queryParams);
-             dispatch(actionCreator(response.data));
-        } catch (error) {
-            console.log(error)
-        }
+export function reachWithDispatch (path, query, queryParams = {}, actionCreator) {
+  return async (dispatch) => {
+    try{
+      let response = await transport(path, query, queryParams);
+      dispatch(actionCreator(response.data));
+    } catch (error) {
+      console.log(error)
     }
+  }
 
 }

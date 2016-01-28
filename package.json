@@ -1,15 +1,11 @@
 {
   "name": "react-reach",
-  "version": "0.0.4",
+  "version": "0.1.4",
   "description": "A small library for react to communicate with GraphQL",
   "main": "dist/index.js",
   "scripts": {
-    "prebuild": "rm -rf dist && mkdir dist && mkdir dist/utils",
-    "build": "babel src/index.js -o dist/index.js && babel src/reachGraphQL.js -o dist/reachGraphQL.js && babel src/reachWithDispatch.js -o dist/reachWithDispatch.js && babel src/utils/transport.js -o dist/utils/transport.js",
-    "commit": "git-cz",
-    "test": "mocha test/reachGraphQL.spec.js -w --compilers js:babel-core/register",
-    "test:single": "mocha test/reachGraphQL.spec.js --compilers js:babel-core/register",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "test": "babel-istanbul cover -x *.spec.js _mocha -- -R spec test/reachGraphQL.spec.js -w --compilers js:babel-core/register",
+    "test:single": "babel-node ./node_modules/.bin/babel-istanbul cover _mocha test/reachGraphQL.spec.js"
   },
   "repository": {
     "type": "git",
@@ -26,34 +22,21 @@
     "url": "https://github.com/kennetpostigo/react-reach/issues"
   },
   "homepage": "https://github.com/kennetpostigo/react-reach#readme",
-  "dependencies": {
-    "isomorphic-fetch": "2.2.0"
-  },
   "devDependencies": {
-    "express": "4.13.3",
-    "express-graphql": "0.4.4",
-    "graphql": "0.4.12",
-    "babel": "6.1.18",
     "babel-cli": "6.1.18",
     "babel-core": "6.1.21",
     "babel-istanbul": "0.5.8",
     "babel-plugin-syntax-async-functions": "6.1.18",
     "babel-preset-es2015": "6.1.18",
     "chai": "3.4.1",
-    "codecov.io": "0.1.6",
+    "chai-as-promised": "5.1.0",
     "commitizen": "2.4.4",
     "cz-conventional-changelog": "1.1.4",
-    "ghooks": "1.0.0",
+    "fetch-mock": "3.0.3",
+    "isomorphic-fetch": "2.2.1",
+    "isparta": "4.0.0",
     "istanbul": "0.4.0",
     "mocha": "2.3.3",
-    "semantic-release": "^4.3.5"
-  },
-  "czConfig": {
-    "path": "node_modules/cz-conventional-changelog"
-  },
-  "config": {
-    "ghooks": {
-      "pre-commit": "npm run test:single"
-    }
+    "sinon": "1.17.2"
   }
 }

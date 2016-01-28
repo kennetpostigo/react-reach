@@ -18,20 +18,35 @@ to account for request to the server. Usually you would go about making network
 request to specified endpoints with REST, or networks request to `"/graphql"`
 if you use GraphQL. Now Relay may come to mind, and what makes reach different
 is that it only does one thing. You can use reach along Redux.
+
+## Features are a Work In Progress
+* ##### Talk to a GraphQL server
+* ##### Cache responses in [Redux](https://github.com/rackt/redux) store
+* ##### Optimistic Updates
+* ###### When used with [react-router](https://github.com/rackt/react-router) dynamically request data needed `onEnter` & `onLeave` Hooks
+
+```js
+npm install --save react-reach
+```
+
+
 ## Usage
+
 react-reach makes fetching data from a GraphQL server as easy as this:
 ```js
-//.reachGraphQL() to make a query for some data
+//.reachGraphQL() to make a query for some data, or add mutation
+//I created this function with for simply communicating back and forth with graphQL
 //params: reachGraphQL(url, query/mutation, queryParameters)
 
 .reachGraphQL('localhost:1000', `{
     user(id: "1") {
         name
     }
-}`, {})
+}`, {});
 
 
 //.reachWithDispatch() to make a query and dispatch actionCreator passed in
+//I created this function for receiving data from the server and automatically caching it in the redux store.
 //To be used with redux-thunk or any similar middleware.
 //params: reachWithDispatch(url, query/mutation, queryParameters, actionCreator)
 
@@ -39,11 +54,24 @@ react-reach makes fetching data from a GraphQL server as easy as this:
     user(id: "1") {
         name
     }
-}`, {}, somePredefinedActionCreator)
+}`, {}, somePredefinedActionCreator);
 
 
+//.reachWithOpts() to make a query and dispatch specified actionCreators from an Object  passed in
+//I created this function for sending data to the server and optimistically updating the redux store client-side
+//To be used with redux-thunk or any similar middleware.
+//params: reachWithDispatch(url, query/mutation, queryParameters, actionCreator, store, retry)
+//Automatically handles updating redux store client-side
+
+.reachWithOpts('localhost:1000', `mutation {
+    CreateUser {
+        _id: "12345",
+        name: JohnDoe
+    }
+}`, {}, ObjectContainingActionCreators, store, true);
 ```
 
-## Status on react-reach
-Its now in Beta. Basic Functionality, if you find bugs or if anything isn't working
-properly please report it.
+## The State of react-reach
+I began working on react-reach the past few day. Its not ready to be used in production.
+I hope people are willing to try it out and help me spot bugs and problems.
+Feel free to give me feedback and request features you would like to see in the project.
