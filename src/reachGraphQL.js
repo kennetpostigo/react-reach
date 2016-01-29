@@ -1,4 +1,4 @@
-import { transport } from './utils/transport.js';
+import transport from './utils/transport.js';
 
 /**
  * [reachGraphQL Makes queres or mutations against GraphQL]

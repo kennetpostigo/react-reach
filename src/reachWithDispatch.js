@@ -1,4 +1,4 @@
-import { transport } from './utils/transport.js';
+import transport from './utils/transport.js';
 
 /**
  * [reachWithDispatch description]
