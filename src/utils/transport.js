@@ -7,8 +7,7 @@ require('babel-polyfill');
  * @param  {[Object]} queryParams = {} [Params to pass into query]
  * @return {[Promise]}            [Promise containing payload]
  */
-export function transport (path, query, queryParams = {}) {
-
+export default function transport (path, query, queryParams = {}) {
   return fetch(path, {
     method: 'POST',
     headers: {
@@ -23,11 +22,10 @@ export function transport (path, query, queryParams = {}) {
   .then((response) => {
     return response.json();
   })
-  .then((response) => {
-    if (response && response.errors) {
-      throw new Error(response.errors);
+  .then((responseBody) => {
+    if (responseBody && responseBody.errors) {
+      throw new Error(responseBody.errors);
     }
-    return response.data;
+    return responseBody.data;
   });
-
 }

@@ -1,4 +1,4 @@
-import {transport} from './utils/transport.js';
+import { transport } from './utils/transport.js';
 require('babel-polyfill');
 
 /**
@@ -9,7 +9,7 @@ require('babel-polyfill');
  * @param  {[type]} actionCreator =  (  [The actionCreator to dispatch]
  * @return {[function]}               [dispatch to store]
  */
-export function reachWithDispatch (path, query, queryParams = {}, actionCreator) {
+export default function reachWithDispatch (path, query, queryParams = {}, actionCreator) {
   return async (dispatch) => {
     try{
       let response = await transport(path, query, queryParams);
