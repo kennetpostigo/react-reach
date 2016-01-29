@@ -1,6 +1,6 @@
 {
   "name": "react-reach",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "A small library for react to communicate with GraphQL",
   "main": "dist/index.js",
   "scripts": {
@@ -33,10 +33,12 @@
     "commitizen": "2.4.4",
     "cz-conventional-changelog": "1.1.4",
     "fetch-mock": "3.0.3",
-    "isomorphic-fetch": "2.2.1",
     "isparta": "4.0.0",
     "istanbul": "0.4.0",
     "mocha": "2.3.3",
     "sinon": "1.17.2"
+  },
+  "dependencies": {
+    "isomorphic-fetch": "2.2.1"
   }
 }
