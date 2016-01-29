@@ -1,4 +1,5 @@
 import fetch from 'isomorphic-fetch';
+require('babel-polyfill');
 /**
  * [transport creates call to server with isomorphic-fetch]
  * @param  {[String]} path        [url to hit with request]
