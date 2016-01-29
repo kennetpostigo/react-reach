@@ -1,4 +1,4 @@
-import transport from './utils/transport.js';
+import { transport } from './utils/transport.js';
 
 /**
  * [reachGraphQL Makes queres or mutations against GraphQL]
@@ -7,7 +7,7 @@ import transport from './utils/transport.js';
  * @param  {[object]} queryParams =  {} [Should contain object with different query params]
  * @return {[Object]}             [Data that was queried or mutated]
  */
-export default function reachGraphQL (path, query, queryParams = {}) {
+export function reachGraphQL (path, query, queryParams = {}) {
   return async () => {
     try{
       let response = await transport(path, query, queryParams);

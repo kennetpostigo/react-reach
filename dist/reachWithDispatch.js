@@ -11,7 +11,7 @@ var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = reachWithDispatch;
+exports.reachWithDispatch = reachWithDispatch;
 
 var _transport = require('./utils/transport.js');
 

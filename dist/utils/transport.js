@@ -7,7 +7,7 @@ var _stringify2 = _interopRequireDefault(_stringify);
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = transport;
+exports.transport = transport;
 
 var _isomorphicFetch = require('isomorphic-fetch');
 

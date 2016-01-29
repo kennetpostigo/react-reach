@@ -6,7 +6,7 @@ import fetch from 'isomorphic-fetch';
  * @param  {[Object]} queryParams = {} [Params to pass into query]
  * @return {[Promise]}            [Promise containing payload]
  */
-export default function transport (path, query, queryParams = {}) {
+export function transport (path, query, queryParams = {}) {
   return fetch(path, {
     method: 'POST',
     headers: {
