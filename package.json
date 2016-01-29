@@ -1,6 +1,6 @@
 {
   "name": "react-reach",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "A small library for react to communicate with GraphQL",
   "main": "dist/react-reach.js",
   "scripts": {
