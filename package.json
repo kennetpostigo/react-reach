@@ -1,6 +1,6 @@
 {
   "name": "react-reach",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "A small library for react to communicate with GraphQL",
   "main": "dist/index.js",
   "scripts": {
@@ -27,6 +27,7 @@
   "devDependencies": {
     "babel-cli": "6.1.18",
     "babel-core": "6.1.21",
+    "babel-eslint": "4.1.6",
     "babel-istanbul": "0.5.8",
     "babel-plugin-syntax-async-functions": "6.1.18",
     "babel-preset-es2015": "6.1.18",

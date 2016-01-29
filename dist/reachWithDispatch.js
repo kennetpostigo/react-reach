@@ -1,13 +1,13 @@
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.reachWithDispatch = reachWithDispatch;
 
-var _transport = require("./utils/transport.js");
+var _transport = require('./utils/transport.js');
 
-require("babel-polyfill");
+require('babel-polyfill');
 
 /**
  * [reachWithDispatch description]

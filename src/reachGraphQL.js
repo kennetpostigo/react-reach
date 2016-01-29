@@ -1,5 +1,5 @@
 import {transport} from './utils/transport.js';
-require("babel-polyfill");
+require('babel-polyfill');
 
 /**
  * [reachGraphQL Makes queres or mutations against GraphQL]
