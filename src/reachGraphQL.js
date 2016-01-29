@@ -1,4 +1,4 @@
-import {transport} from './utils/transport.js';
+import {transport} from './transport.js';
 require('babel-polyfill');
 
 /**
@@ -6,7 +6,7 @@ require('babel-polyfill');
  * @param  {[String]} path        [path to the GraphQL server]
  * @param  {[Object]} query       [The query that GraphQL will use to fetch your data]
  * @param  {[object]} queryParams =  {} [should contain object with different query params]
- * @return {[Object]}             [Data that was queried or qutated]
+ * @return {[Object]}             [Data that was queried or mutated]
  */
 export function reachGraphQL (path, query, queryParams = {}) {
   return async () => {

@@ -1,4 +1,4 @@
-import {transport} from './utils/transport.js';
+import {transport} from './transport.js';
 require('babel-polyfill');
 
 /**
@@ -18,5 +18,4 @@ export function reachWithDispatch (path, query, queryParams = {}, actionCreator)
       console.log(error)
     }
   }
-
 }

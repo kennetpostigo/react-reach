@@ -1,5 +1,5 @@
-import {transport} from './utils/transport.js';
-// require("babel-polyfill");
+import {transport} from './transport.js';
+require("babel-polyfill");
 
 
 // Use currying to reduce size of the parameters?
