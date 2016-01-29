@@ -1,4 +1,4 @@
-import {transport} from './transport.js';
+import {transport} from './utils/transport.js';
 require('babel-polyfill');
 
 /**
