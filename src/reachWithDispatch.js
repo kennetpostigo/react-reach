@@ -1,5 +1,4 @@
 import { transport } from './utils/transport.js';
-require('babel-polyfill');
 
 /**
  * [reachWithDispatch description]

@@ -1,10 +1,11 @@
 {
   "name": "react-reach",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "description": "A small library for react to communicate with GraphQL",
-  "main": "dist/react-reach.js",
+  "main": "dist/index.js",
   "scripts": {
-    "build": "webpack",
+    "prebuild": "rm -rf dist && mkdir dist && mkdir dist/utils",
+    "build": "babel src/index.js -o dist/index.js && babel src/reachGraphQL.js -o dist/reachGraphQL.js && babel src/reachWithDispatch.js -o dist/reachWithDispatch.js && babel src/utils/transport.js -o dist/utils/transport.js",
     "test": "babel-istanbul cover -x *.spec.js _mocha -- -R spec test/reachGraphQL.spec.js -w --compilers js:babel-core/register",
     "test:single": "babel-node ./node_modules/.bin/babel-istanbul cover _mocha test/reachGraphQL.spec.js"
   },
@@ -30,6 +31,7 @@
     "babel-istanbul": "0.5.8",
     "babel-loader": "6.2.1",
     "babel-plugin-transform-async-to-generator": "6.4.6",
+    "babel-plugin-transform-runtime": "6.4.3",
     "babel-preset-es2015": "6.3.13",
     "chai": "3.4.1",
     "chai-as-promised": "5.1.0",
@@ -39,11 +41,10 @@
     "isparta": "4.0.0",
     "istanbul": "0.4.0",
     "mocha": "2.3.3",
-    "sinon": "1.17.2",
-    "webpack": "1.12.12"
+    "sinon": "1.17.2"
   },
   "dependencies": {
-    "babel-polyfill": "6.3.14",
+    "babel-runtime": "6.3.19",
     "isomorphic-fetch": "2.2.1"
   }
 }
