@@ -7,7 +7,7 @@
 [![downloads](https://img.shields.io/npm/dm/react-reach.svg?style=flat-square)](http://npm-stat.com/charts.html?package=react-reach&from=2015-08-01)
 [![MIT License](https://img.shields.io/npm/l/react-reach.svg?style=flat-square)](http://opensource.org/licenses/MIT)
 
-It helps you write applications that use tools you are familiar with from the
+react-reach helps you write applications that use tools you are familiar with from the
 react ecosystem. react-reach is designed to be used along side redux and react.
 React-reach works as the layer that handles communication of data between React
 and graphQL. Reach enables developers to make queries and mutations against GraphQL.
@@ -20,10 +20,10 @@ if you use GraphQL. Now Relay may come to mind, and what makes reach different
 is that it only does one thing. You can use reach along Redux.
 
 ## Features are a Work In Progress
-* ##### Talk to a GraphQL server
-* ##### Cache responses in [Redux](https://github.com/rackt/redux) store
-* ##### Optimistic Updates
-* ###### When used with [react-router](https://github.com/rackt/react-router) dynamically request data needed `onEnter` & `onLeave` Hooks
+* __Talk to a GraphQL server__
+* __Cache responses in [Redux](https://github.com/rackt/redux) store__
+* __Optimistic Updates__
+* __When used with [react-router](https://github.com/rackt/react-router) dynamically request data needed `onEnter` & `onLeave` Hooks__
 
 ```js
 npm install --save react-reach
@@ -38,7 +38,7 @@ react-reach makes fetching data from a GraphQL server as easy as this:
 //I created this function with for simply communicating back and forth with graphQL
 //params: reachGraphQL(url, query/mutation, queryParameters)
 
-.reachGraphQL('localhost:1000', `{
+reachGraphQL('localhost:1000', `{
     user(id: "1") {
         name
     }
@@ -50,7 +50,7 @@ react-reach makes fetching data from a GraphQL server as easy as this:
 //To be used with redux-thunk or any similar middleware.
 //params: reachWithDispatch(url, query/mutation, queryParameters, actionCreator)
 
-.reachWithDispatch('localhost:1000', `{
+reachWithDispatch('localhost:1000', `{
     user(id: "1") {
         name
     }
@@ -63,7 +63,7 @@ react-reach makes fetching data from a GraphQL server as easy as this:
 //params: reachWithDispatch(url, query/mutation, queryParameters, actionCreator, store, retry)
 //Automatically handles updating redux store client-side
 
-.reachWithOpts('localhost:1000', `mutation {
+reachWithOpts('localhost:1000', `mutation {
     CreateUser {
         _id: "12345",
         name: JohnDoe
