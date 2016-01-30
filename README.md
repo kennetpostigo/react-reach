@@ -20,16 +20,14 @@ if you use GraphQL. Now Relay may come to mind, and what makes reach different
 is that it only does one thing. You can use reach along Redux.
 
 ## Features are a Work In Progress
-* __Talk to a GraphQL server__
-* __Cache responses in [Redux](https://github.com/rackt/redux) store__
+* [x] __Talk to a GraphQL server__
+* [x] __Cache responses in [Redux](https://github.com/rackt/redux) store__
 * __Optimistic Updates__
-* __When used with [react-router](https://github.com/rackt/react-router) dynamically request data needed `onEnter` & `onLeave` Hooks__
+* [x] __When used with [react-router](https://github.com/rackt/react-router) dynamically request data needed `onEnter` & `onLeave` Hooks__
 
 ```js
 npm install --save react-reach
 ```
-
-
 ## Usage
 
 react-reach makes fetching data from a GraphQL server as easy as this:
@@ -78,7 +76,27 @@ reachWithOpts('localhost:1000', `mutation {
 }`, {}, ObjectContainingActionCreators, store, true);
 ```
 
+## Caveat
+
+Make sure to enable CORS on your server __ with OPTIONS __ to avoid CORS error
+or Preflight fetch error. Heres an example when using Express: 
+
+```js
+app.use(function (req, res, next) {
+	res.setHeader('Access-Control-Allow-Origin', '*');
+	res.setHeader('Access-Control-Allow-Methods', 'GET, POST');
+	res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type, Authorization');
+
+	if (req.method === "OPTIONS") {
+		res.status(200).end();
+	} else {
+		next();
+	}
+	next();
+});
+```
+
 ## The State of react-reach
-I began working on react-reach the past few day. Its not ready to be used in production.
-I hope people are willing to try it out and help me spot bugs and problems.
-Feel free to give me feedback and request features you would like to see in the project.
+I began working on react-reach the past few day. I hope people are willing to
+try it out and help me spot bugs and problems.Feel free to give me feedback and
+request features you would like to see in the project.
