@@ -39,22 +39,20 @@ var reachGraphQL = exports.reachGraphQL = function () {
 
           case 3:
             response = _context.sent;
-
-            console.log(response); //heres where its returning undefined
             return _context.abrupt('return', response);
 
-          case 8:
-            _context.prev = 8;
+          case 7:
+            _context.prev = 7;
             _context.t0 = _context['catch'](0);
 
             console.log(_context.t0);
 
-          case 11:
+          case 10:
           case 'end':
             return _context.stop();
         }
       }
-    }, _callee, this, [[0, 8]]);
+    }, _callee, this, [[0, 7]]);
   }));
   return function reachGraphQL(_x, _x2, _x3) {
     return ref.apply(this, arguments);
