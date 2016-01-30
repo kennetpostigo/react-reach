@@ -11,6 +11,7 @@ import fetch from 'isomorphic-fetch';
      return new Promise ((resolve, reject) => {
        return fetch(path, {
              method: 'POST',
+             mode: 'cors',
              headers: {
                  'Accept': 'application/json',
                  'content-type': 'application/json'
