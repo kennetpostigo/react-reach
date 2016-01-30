@@ -42,7 +42,7 @@ var reachWithDispatch = exports.reachWithDispatch = function () {
           case 3:
             response = _context.sent;
 
-            dispatch(actionCreator(response.data));
+            dispatch(actionCreator(response));
             _context.next = 10;
             break;
 
