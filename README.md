@@ -34,9 +34,11 @@ npm install --save react-reach
 
 react-reach makes fetching data from a GraphQL server as easy as this:
 ```js
-//.reachGraphQL() to make a query for some data, or add mutation
+//reachGraphQL() to make a query for some data, or add mutation
 //I created this function with for simply communicating back and forth with graphQL
 //params: reachGraphQL(url, query/mutation, queryParameters)
+
+import { reachGraphQL } from 'react-reach';
 
 reachGraphQL('localhost:1000', `{
     user(id: "1") {
@@ -45,10 +47,12 @@ reachGraphQL('localhost:1000', `{
 }`, {});
 
 
-//.reachWithDispatch() to make a query and dispatch actionCreator passed in
+//reachWithDispatch() to make a query and dispatch actionCreator passed in
 //I created this function for receiving data from the server and automatically caching it in the redux store.
 //To be used with redux-thunk or any similar middleware.
 //params: reachWithDispatch(url, query/mutation, queryParameters, actionCreator)
+
+import { reachWithDispatch } from 'react-reach';
 
 reachWithDispatch('localhost:1000', `{
     user(id: "1") {
@@ -57,11 +61,14 @@ reachWithDispatch('localhost:1000', `{
 }`, {}, somePredefinedActionCreator);
 
 
-//.reachWithOpts() to make a query and dispatch specified actionCreators from an Object  passed in
+//reachWithOpts() to make a query and dispatch specified actionCreators from an Object  passed in
 //I created this function for sending data to the server and optimistically updating the redux store client-side
 //To be used with redux-thunk or any similar middleware.
 //params: reachWithDispatch(url, query/mutation, queryParameters, actionCreator, store, retry)
 //Automatically handles updating redux store client-side
+//This function is still a WIP not implemented
+
+import { reachWithOpts } from 'react-reach';
 
 reachWithOpts('localhost:1000', `mutation {
     CreateUser {
