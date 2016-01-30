@@ -22,7 +22,7 @@ is that it only does one thing. You can use reach along Redux.
 ## Features are a Work In Progress
 * [x] __Talk to a GraphQL server__
 * [x] __Cache responses in [Redux](https://github.com/rackt/redux) store__
-* __Optimistic Updates__
+* [ ] __Optimistic Updates__
 * [x] __When used with [react-router](https://github.com/rackt/react-router) dynamically request data needed `onEnter` & `onLeave` Hooks__
 
 ```js
@@ -79,7 +79,7 @@ reachWithOpts('localhost:1000', `mutation {
 ## Caveat
 
 Make sure to enable CORS on your server __ with OPTIONS __ to avoid CORS error
-or Preflight fetch error. Heres an example when using Express: 
+or Preflight fetch error. Heres an example when using Express:
 
 ```js
 app.use(function (req, res, next) {
