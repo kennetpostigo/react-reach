@@ -33,6 +33,7 @@ function transport(path, query) {
     return new _promise2.default(function (resolve, reject) {
         return (0, _isomorphicFetch2.default)(path, {
             method: 'POST',
+            mode: 'cors',
             headers: {
                 'Accept': 'application/json',
                 'content-type': 'application/json'
