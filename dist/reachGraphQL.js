@@ -11,7 +11,7 @@ var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.reachGraphQL = reachGraphQL;
+exports.reachGraphQL = undefined;
 
 var _transport = require('./utils/transport.js');
 
@@ -24,12 +24,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * @param  {[object]} queryParams =  {} [Should contain object with different query params]
  * @return {[Object]}             [Data that was queried or mutated]
  */
-function reachGraphQL(path, query) {
-  var _this = this;
 
-  var queryParams = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
-
-  return (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee() {
+var reachGraphQL = exports.reachGraphQL = function () {
+  var ref = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee(path, query) {
+    var queryParams = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
     var response;
     return _regenerator2.default.wrap(function _callee$(_context) {
       while (1) {
@@ -41,19 +39,24 @@ function reachGraphQL(path, query) {
 
           case 3:
             response = _context.sent;
-            return _context.abrupt('return', response.data);
 
-          case 7:
-            _context.prev = 7;
+            console.log(response); //heres where its returning undefined
+            return _context.abrupt('return', response);
+
+          case 8:
+            _context.prev = 8;
             _context.t0 = _context['catch'](0);
 
             console.log(_context.t0);
 
-          case 10:
+          case 11:
           case 'end':
             return _context.stop();
         }
       }
-    }, _callee, _this, [[0, 7]]);
+    }, _callee, this, [[0, 8]]);
   }));
-}
+  return function reachGraphQL(_x, _x2, _x3) {
+    return ref.apply(this, arguments);
+  };
+}();

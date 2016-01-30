@@ -7,13 +7,11 @@ import { transport } from './utils/transport.js';
  * @param  {[object]} queryParams =  {} [Should contain object with different query params]
  * @return {[Object]}             [Data that was queried or mutated]
  */
-export function reachGraphQL (path, query, queryParams = {}) {
-  return async () => {
-    try{
-      let response = await transport(path, query, queryParams);
-      return response.data;
-    } catch (error) {
-      console.log(error)
-    }
-  }
+export async function reachGraphQL (path, query, queryParams = {}) {
+ try{
+   let response = await transport(path, query, queryParams);
+   return response;
+ } catch (error) {
+   console.log(error)
+ }
 }
