@@ -29,10 +29,10 @@ is that it only does one thing. You can use reach along Redux.
 ## Developer Guide
 + Need to create a blog post to demonstrate how to use it in a sample application
 
+## Usage
 ```js
 npm install --save react-reach
 ```
-## Usage
 
 react-reach makes fetching data from a GraphQL server as easy as this:
 ```js
