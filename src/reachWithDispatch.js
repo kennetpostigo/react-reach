@@ -11,7 +11,9 @@ import { transport } from './utils/transport.js';
 export async function reachWithDispatch (path, query, queryParams = {}, actionCreator) {
   try{
     let response = await transport(path, query, queryParams);
-    dispatch(actionCreator(response));
+    return dispatch => {
+      return dispatch(actionCreator(response));
+    }
   } catch (error) {
     console.log(error);
   }
