@@ -41,15 +41,68 @@ react-reach makes fetching data from a GraphQL server as easy as this:
 //reachGraphQL() to make a query for some data, or add mutation
 //I created this function with for simply communicating back and forth with graphQL
 //params: reachGraphQL(url, query/mutation, queryParameters)
+import React from 'react';
+import reactDOM from 'react-dom';
+import {reachGraphQL} from 'react-reach';
 
-import { reachGraphQL } from 'react-reach';
+class App extends React.Component {
+  constructor(props, context) {
+    super(props, context);
+    this.state = {
+      shipName: ''
+    };
+  };
 
-reachGraphQL('localhost:1000', `{
-    user(id: "1") {
-        name
+  getAllStarShips () {
+    reachGraphQL('http://localhost:4000/', `{
+     allStarships(first: 7) {
+       edges {
+         node {
+           id
+           name
+           model
+           costInCredits
+           pilotConnection {
+             edges {
+               node {
+                 ...pilotFragment
+               }
+             }
+           }
+         }
+       }
+     }
     }
-}`, {});
+    fragment pilotFragment on Person {
+     name
+     homeworld { name }
+   }`, {}). then((data) => {
+     console.log('getALL:', JSON.stringify(data, null, 2))
+      this.setState({
+        shipName: data.allStarships.edges[1].node.name
+      });
+   });
+  }
 
+  componentDidMount() {
+    this.getAllStarShips();
+  }
+
+  render() {
+    console.log('state:',JSON.stringify(this.state.shipName, null, 2));
+    return (
+      <div>
+        <h1>React-Reach!</h1>
+        <p>{this.state.shipName}</p>
+      </div>
+    );
+  }
+}
+
+reactDOM.render(
+  <App></App>,
+  document.getElementById('app')
+);
 
 //reachWithDispatch() to make a query and dispatch actionCreator passed in
 //I created this function for receiving data from the server and automatically caching it in the redux store.
