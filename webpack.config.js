@@ -1,12 +1,6 @@
+var webpack = require('webpack');
+var env = process.env.NODE_ENV;
 module.exports = {
-  entry: [
-    'babel-polyfill',
-    './src/index.js'
-  ],
-  output: {
-    path: 'dist',
-    filename: 'react-reach.js'
-  },
   module: {
     loaders: [
       {
@@ -14,5 +8,29 @@ module.exports = {
         loader: 'babel-loader',
       }
     ]
-  }
+  },
+  output: {
+     library: 'react-reach',
+     libraryTarget: 'umd'
+   },
+  plugins: [
+  new webpack.optimize.OccurenceOrderPlugin(),
+  new webpack.DefinePlugin({
+    'process.env.NODE_ENV': JSON.stringify(env)
+  })
+]
 };
+
+if (env === 'production') {
+  config.plugins.push(
+    new webpack.optimize.UglifyJsPlugin({
+      compressor: {
+        pure_getters: true,
+        unsafe: true,
+        unsafe_comps: true,
+        screw_ie8: true,
+        warnings: false
+      }
+    })
+  )
+}
