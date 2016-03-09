@@ -10,8 +10,7 @@ import { transport } from './utils/transport.js';
 
  export async function reachGraphQL (path, query, queryParams = {}) {
      try {
-       let response = await transport(path, query, queryParams);
-       return response;
+         return await transport(path, query, queryParams);
      } catch (error) {
          console.log(error)
      }

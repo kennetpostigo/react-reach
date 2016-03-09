@@ -361,7 +361,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	    if (responseBody && responseBody.errors) {
 	      throw new Error(responseBody.errors);
 	    }
-	    console.log(responseBody.data);
 	    return responseBody.data;
 	  });
 	}
@@ -724,7 +723,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	var reachGraphQL = exports.reachGraphQL = function () {
 	    var ref = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee(path, query) {
 	        var queryParams = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
-	        var response;
 	        return _regenerator2.default.wrap(function _callee$(_context) {
 	            while (1) {
 	                switch (_context.prev = _context.next) {
@@ -734,21 +732,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	                        return (0, _transport.transport)(path, query, queryParams);
 
 	                    case 3:
-	                        response = _context.sent;
-	                        return _context.abrupt('return', response);
+	                        return _context.abrupt('return', _context.sent);
 
-	                    case 7:
-	                        _context.prev = 7;
+	                    case 6:
+	                        _context.prev = 6;
 	                        _context.t0 = _context['catch'](0);
 
 	                        console.log(_context.t0);
 
-	                    case 10:
+	                    case 9:
 	                    case 'end':
 	                        return _context.stop();
 	                }
 	            }
-	        }, _callee, this, [[0, 7]]);
+	        }, _callee, this, [[0, 6]]);
 	    }));
 	    return function reachGraphQL(_x, _x2, _x3) {
 	        return ref.apply(this, arguments);
