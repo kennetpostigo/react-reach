@@ -723,6 +723,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	var reachGraphQL = exports.reachGraphQL = function () {
 	    var ref = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee(path, query) {
 	        var queryParams = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
+	        var response;
 	        return _regenerator2.default.wrap(function _callee$(_context) {
 	            while (1) {
 	                switch (_context.prev = _context.next) {
@@ -732,20 +733,21 @@ return /******/ (function(modules) { // webpackBootstrap
 	                        return (0, _transport.transport)(path, query, queryParams);
 
 	                    case 3:
-	                        return _context.abrupt('return', _context.sent);
+	                        response = _context.sent;
+	                        return _context.abrupt('return', response);
 
-	                    case 6:
-	                        _context.prev = 6;
+	                    case 7:
+	                        _context.prev = 7;
 	                        _context.t0 = _context['catch'](0);
 
 	                        console.log(_context.t0);
 
-	                    case 9:
+	                    case 10:
 	                    case 'end':
 	                        return _context.stop();
 	                }
 	            }
-	        }, _callee, this, [[0, 6]]);
+	        }, _callee, this, [[0, 7]]);
 	    }));
 	    return function reachGraphQL(_x, _x2, _x3) {
 	        return ref.apply(this, arguments);
