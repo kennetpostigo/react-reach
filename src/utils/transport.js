@@ -26,6 +26,7 @@ export function transport (path, query, queryParams = {}) {
     if (responseBody && responseBody.errors) {
       throw new Error(responseBody.errors);
     }
+    console.log(responseBody.data);
     return responseBody.data;
   });
 }
