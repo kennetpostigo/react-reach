@@ -76,8 +76,8 @@ class App extends React.Component {
     fragment pilotFragment on Person {
      name
      homeworld { name }
-   }`, {}). then((data) => {
-     console.log('getALL:', JSON.stringify(data, null, 2))
+   }`, {})
+   .then((data) => {
       this.setState({
         shipName: data.allStarships.edges[1].node.name
       });
