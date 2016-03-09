@@ -1,8 +1,8 @@
 {
   "name": "react-reach",
-  "version": "0.3.1",
+  "version": "0.3.3",
   "description": "A small library for react to communicate with GraphQL",
-  "main": "dist/index.js",
+  "main": "dist/react-reach.js",
   "scripts": {
     "prebuild": "rm -rf dist && mkdir dist && mkdir dist/utils",
     "build": "babel src/index.js -o dist/index.js && babel src/reachGraphQL.js -o dist/reachGraphQL.js && babel src/reachWithDispatch.js -o dist/reachWithDispatch.js && babel src/utils/transport.js -o dist/utils/transport.js",

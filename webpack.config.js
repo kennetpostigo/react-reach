@@ -1,24 +1,24 @@
-var webpack = require('webpack');
-var env = process.env.NODE_ENV;
-module.exports = {
+'use strict';
+
+var webpack = require('webpack')
+
+var env = process.env.NODE_ENV
+var config = {
   module: {
     loaders: [
-      {
-        test: /\.js$/,
-        loader: 'babel-loader',
-      }
+      { test: /\.js$/, loaders: ['babel-loader'], exclude: /node_modules/ }
     ]
   },
   output: {
-     library: 'react-reach',
-     libraryTarget: 'umd'
-   },
+    library: 'react-reach',
+    libraryTarget: 'umd'
+  },
   plugins: [
-  new webpack.optimize.OccurenceOrderPlugin(),
-  new webpack.DefinePlugin({
-    'process.env.NODE_ENV': JSON.stringify(env)
-  })
-]
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(env)
+    })
+  ]
 };
 
 if (env === 'production') {
@@ -34,3 +34,5 @@ if (env === 'production') {
     })
   )
 }
+
+module.exports = config
