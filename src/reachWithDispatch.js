@@ -1,4 +1,3 @@
-
 import { transport } from './utils/transport.js';
 
 /**
@@ -9,13 +8,11 @@ import { transport } from './utils/transport.js';
  * @param  {[type]} actionCreator =  (  [The actionCreator to dispatch]
  * @return {[function]}               [dispatch to store]
  */
-export async function reachWithDispatch (path, query, queryParams = {}, actionCreator) {
-  try{
-    let response = await transport(path, query, queryParams);
-    return dispatch => {
-      return dispatch(actionCreator(response));
-    }
-  } catch (error) {
-    console.log(error);
-  }
+export function reachWithDispatch (path, query, queryParams = {}, actionCreator) {
+  return transport(path, query, queryParams)
+    .then((res) => {
+      return dispatch => {
+        return dispatch(actionCreator(res));
+      }
+    });
 }

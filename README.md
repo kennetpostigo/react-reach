@@ -23,7 +23,7 @@ is that it only does one thing. You can use reach along Redux.
 * [x] __Talk to a GraphQL server__
 * [x] __Cache responses in [Redux](https://github.com/rackt/redux) store__
 * [ ] __Optimistic Updates__
-* [ ] __Create Example Application
+* [ ] __Create Example Application__
 * [ ] __Create Blog Post with Explanations__
 * [x] __UMD Build__
 * [x] __When used with [react-router](https://github.com/rackt/react-router) dynamically request data needed `onEnter` & `onLeave` Hooks__
