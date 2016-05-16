@@ -8,7 +8,7 @@ import fetch from 'isomorphic-fetch';
  * @return {[Promise]}            [Promise containing payload]
  */
 
-export function transport (path, query, queryParams = {}) {
+export function transport (path, query, queryParams = {}, options = {}) {
   return fetch(path, {
     method: 'POST',
     headers: {
@@ -17,7 +17,8 @@ export function transport (path, query, queryParams = {}) {
     },
     body: JSON.stringify({
       query,
-      queryParams
+      queryParams,
+      options
     })
   })
   .then((response) => {

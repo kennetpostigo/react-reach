@@ -100,6 +100,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function transport(path, query) {
 	  var queryParams = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
+	  var options = arguments.length <= 3 || arguments[3] === undefined ? {} : arguments[3];
 
 	  return (0, _isomorphicFetch2.default)(path, {
 	    method: 'POST',
@@ -109,7 +110,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    },
 	    body: (0, _stringify2.default)({
 	      query: query,
-	      queryParams: queryParams
+	      queryParams: queryParams,
+	      options: options
 	    })
 	  }).then(function (response) {
 	    return response.json();
@@ -144,8 +146,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function reachGraphQL(path, query) {
 	  var queryParams = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
+	  var options = arguments.length <= 3 || arguments[3] === undefined ? {} : arguments[3];
 
-	  return (0, _transport.transport)(path, query, queryParams).then(function (res) {
+	  return (0, _transport.transport)(path, query, queryParams, options).then(function (res) {
 	    return res;
 	  });
 	}

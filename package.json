@@ -1,13 +1,13 @@
 {
   "name": "react-reach",
-  "version": "0.3.7",
+  "version": "0.3.8",
   "description": "A small library for react to communicate with GraphQL",
   "main": "dist/react-reach.js",
   "scripts": {
     "prebuild": "rm -rf dist && mkdir dist && mkdir dist/utils",
     "build": "babel src/index.js -o dist/index.js && babel src/reachGraphQL.js -o dist/reachGraphQL.js && babel src/reachWithDispatch.js -o dist/reachWithDispatch.js && babel src/utils/transport.js -o dist/utils/transport.js",
-    "build:develop": "webpack src/index.js dist/react-reach.js",
-    "build:production": "webpack src/index.js dist/react-reach.min.js",
+    "build:develop": "cross-env NODE_ENV=development webpack src/index.js dist/react-reach.js",
+    "build:production": "cross-env NODE_ENV=production webpack src/index.js dist/react-reach.min.js",
     "test": "babel-istanbul cover -x *.spec.js _mocha -- -R spec test/reachGraphQL.spec.js -w --compilers js:babel-core/register",
     "test:single": "babel-node ./node_modules/.bin/babel-istanbul cover _mocha test/reachGraphQL.spec.js"
   },
@@ -39,6 +39,7 @@
     "chai": "3.4.1",
     "chai-as-promised": "5.1.0",
     "commitizen": "2.4.4",
+    "cross-env": "1.0.7",
     "cz-conventional-changelog": "1.1.4",
     "eslint": "1.10.3",
     "eslint-plugin-babel": "3.0.0",

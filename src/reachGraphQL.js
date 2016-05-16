@@ -8,8 +8,8 @@ import { transport } from './utils/transport.js';
  * @return {[Object]}             [Data that was queried or mutated]
  */
 
-export function reachGraphQL (path, query, queryParams = {}) {
- return transport(path, query, queryParams).then((res) => {
+export function reachGraphQL (path, query, queryParams = {}, options = {}) {
+ return transport(path, query, queryParams, options).then((res) => {
    return res;
  });
 }
