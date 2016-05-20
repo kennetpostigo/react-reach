@@ -98,7 +98,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * @return {[Promise]}            [Promise containing payload]
 	 */
 
-	function transport(path, query, token) {
+	function transport(path, query, queryParams, token) {
 	  return (0, _isomorphicFetch2.default)(path, {
 	    method: 'POST',
 	    headers: {
@@ -107,7 +107,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	      'authorization': token
 	    },
 	    body: (0, _stringify2.default)({
-	      query: query
+	      query: query,
+	      queryParams: queryParams
 	    })
 	  }).then(function (response) {
 	    return response.json();
