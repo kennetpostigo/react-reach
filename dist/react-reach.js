@@ -98,20 +98,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * @return {[Promise]}            [Promise containing payload]
 	 */
 
-	function transport(path, query) {
-	  var queryParams = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
-	  var options = arguments.length <= 3 || arguments[3] === undefined ? {} : arguments[3];
-
+	function transport(path, query, token) {
 	  return (0, _isomorphicFetch2.default)(path, {
 	    method: 'POST',
 	    headers: {
 	      'Accept': 'application/json',
-	      'content-type': 'application/json'
+	      'content-type': 'application/json',
+	      'authorization': token
 	    },
 	    body: (0, _stringify2.default)({
-	      query: query,
-	      queryParams: queryParams,
-	      options: options
+	      query: query
 	    })
 	  }).then(function (response) {
 	    return response.json();
@@ -146,9 +142,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function reachGraphQL(path, query) {
 	  var queryParams = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
-	  var options = arguments.length <= 3 || arguments[3] === undefined ? {} : arguments[3];
+	  var token = arguments[3];
 
-	  return (0, _transport.transport)(path, query, queryParams, options).then(function (res) {
+	  return (0, _transport.transport)(path, query, queryParams, token).then(function (res) {
 	    return res;
 	  });
 	}
@@ -176,9 +172,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	 */
 	function reachWithDispatch(path, query) {
 	  var queryParams = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
-	  var actionCreator = arguments[3];
+	  var token = arguments[3];
+	  var actionCreator = arguments[4];
 
-	  return (0, _transport.transport)(path, query, queryParams).then(function (res) {
+	  return (0, _transport.transport)(path, query, queryParams, token).then(function (res) {
 	    return function (dispatch) {
 	      return dispatch(actionCreator(res));
 	    };
