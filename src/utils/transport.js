@@ -1,4 +1,3 @@
-
 import fetch from 'isomorphic-fetch';
 /**
  * [transport creates call to server with isomorphic-fetch]

@@ -13,6 +13,16 @@ var config = {
     library: 'react-reach',
     libraryTarget: 'umd'
   },
+  externals: [
+    {
+      'isomorphic-fetch': {
+        root: 'fetch',
+        commonjs2: 'isomorphic-fetch',
+        commonjs: 'isomorphic-fetch',
+        amd: 'isomorphic-fetch'
+      }
+    }
+  ],
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.DefinePlugin({
