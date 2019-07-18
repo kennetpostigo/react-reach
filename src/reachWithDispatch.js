@@ -1,4 +1,4 @@
-import { transport } from './utils/transport.js';
+import { transport } from './utils/transport';
 
 /**
  * [reachWithDispatch description]
@@ -9,10 +9,5 @@ import { transport } from './utils/transport.js';
  * @return {[function]}               [dispatch to store]
  */
 export function reachWithDispatch (path, query, queryParams = {}, token, actionCreator) {
-  return transport(path, query, queryParams, token)
-    .then((res) => {
-      return dispatch => {
-        return dispatch(actionCreator(res));
-      }
-    });
+  return transport(path, query, queryParams, token).then(res => dispatch => dispatch(actionCreator(res)));
 }

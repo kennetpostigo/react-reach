@@ -1,4 +1,4 @@
-import { transport } from './utils/transport.js';
+import { transport } from './utils/transport';
 
 /**
  * [reachGraphQL Makes queres or mutations against GraphQL]
@@ -9,7 +9,5 @@ import { transport } from './utils/transport.js';
  */
 
 export function reachGraphQL (path, query, queryParams = {}, token) {
- return transport(path, query, queryParams, token).then((res) => {
-   return res;
- });
+ return transport(path, query, queryParams, token).then(res => res);
 }
