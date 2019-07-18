@@ -1,5 +1,5 @@
-import { reachGraphQL } from './reachGraphQL.js';
-import { reachWithDispatch } from './reachWithDispatch.js';
+import { reachGraphQL } from './reachGraphQL';
+import { reachWithDispatch } from './reachWithDispatch';
 
 export {
   reachGraphQL,

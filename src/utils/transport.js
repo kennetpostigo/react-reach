@@ -20,10 +20,8 @@ export function transport (path, query, queryParams, token) {
       queryParams
     })
   })
-  .then((response) => {
-    return response.json();
-  })
-  .then((responseBody) => {
+  .then(response => response.json())
+  .then(responseBody => {
     if (responseBody && responseBody.errors) {
       throw new Error(responseBody.errors);
     }
