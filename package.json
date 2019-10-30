@@ -41,7 +41,7 @@
     "commitizen": "2.4.4",
     "cross-env": "1.0.7",
     "cz-conventional-changelog": "1.1.4",
-    "eslint": "1.10.3",
+    "eslint": "6.6.0",
     "eslint-plugin-babel": "3.0.0",
     "fetch-mock": "3.0.3",
     "isparta": "4.0.0",
